@@ -133,16 +133,6 @@ in {
         "dl".source           = mkLink "${home}/Downloads";
         "iCloud".source       = mkLink "${home}/Library/Mobile Documents/com~apple~CloudDocs";
       }
-      // lib.optionalAttrs (hostname != "athena") {
-        "org".source    = mkLink "${home}/doc/org";
-
-        "Mobile".source = mkLink "${home}/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/org";
-        "Drafts".source = mkLink "${home}/Library/Mobile Documents/iCloud~com~agiletortoise~Drafts5/Documents";
-        "Inbox".source  = mkLink "${home}/Library/Application Support/DEVONthink 3/Inbox";
-
-        "Media".source  = mkLink "${home}/Library/CloudStorage/ShellFish/Athena/Media";
-        "Athena".source = mkLink "${home}/Library/CloudStorage/ShellFish/Athena";
-      }
       // lib.optionalAttrs (hostname == "vulcan") {
         "Audio".source           = mkLink "/Volumes/ext/Audio";
         "Photos".source          = mkLink "/Volumes/ext/Photos";
@@ -162,6 +152,16 @@ in {
         "Photos".source = mkLink "/Volumes/tank/Photos";
         "Video".source  = mkLink "/Volumes/tank/Video";
         "Media".source  = mkLink "/Volumes/tank/Media";
+      }
+      // lib.optionalAttrs (hostname != "athena") {
+        "org".source    = mkLink "${home}/doc/org";
+
+        "Mobile".source = mkLink "${home}/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/org";
+        "Drafts".source = mkLink "${home}/Library/Mobile Documents/iCloud~com~agiletortoise~Drafts5/Documents";
+        "Inbox".source  = mkLink "${home}/Library/Application Support/DEVONthink 3/Inbox";
+
+        "Media".source  = mkLink "${home}/Library/CloudStorage/ShellFish/Athena/Media";
+        "Athena".source = mkLink "${home}/Library/CloudStorage/ShellFish/Athena";
       };
   };
 
